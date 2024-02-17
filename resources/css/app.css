@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    
+    .navColor{
+        @apply bg-gradient-to-b from-white to-cyan-400 shadow-xl; 
+    }
+
+    .button{
+        @apply bg-gradient-to-b from-cyan-400 to-white shadow-2xl shadow-neutral-950 rounded-full w-24 text-2xl text-center pt-[6px];
+    }
+
+    .iconAnimation{
+        @apply transition transform hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none duration-300;
+    }
+
+    .confLogin{
+        @apply bg-gradient-to-b from-gray-500/80 to-cyan-500/80
+    }
+
+    .itemMenu{
+        @apply bg-slate-300 border rounded-md border-slate-600 text-center text-xl p-1 hover:scale-105 ms-2 mt-2
+    }
+}

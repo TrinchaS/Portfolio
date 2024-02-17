@@ -6,8 +6,19 @@
   @vite('resources/css/app.css')
 </head>
 <body>
+  <header class="sticky top-0 overflow-hidden">
+    @include('components.nav')
+  </header>
+  
+  <main>
+
+  </main>
+  
+  <footer>
+
+  </footer>
   <h1 class="text-3xl font-bold underline">
-    Hello world!
+    Principal
   </h1>
 </body>
 </html>
