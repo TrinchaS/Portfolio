@@ -22,4 +22,6 @@ Route::get('/', function () {
 
 Route::prefix('estudios')->group(function(){
     Route::get('/',[EstudioController::class,'index']);
+    Route::get('/buscar/{id}',[EstudioController::class,'show']);
+    Route::get('/crear',[EstudioController::class,'store']);
 });

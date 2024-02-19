@@ -13,7 +13,7 @@ class EstudioController extends Controller
     public function index()
     {
         $estudiosModel = Estudio::all();
-        return view('estudio.home',['estudios'=>$estudiosModel]);
+        return view('estudio.index',['estudios'=>$estudiosModel]);
     }
 
     /**
@@ -29,15 +29,24 @@ class EstudioController extends Controller
      */
     public function store(Request $request)
     {
+        $nuevo = new Estudio();
         
+        $nuevo->titulo = 'Programacion';
+        $nuevo->instituto = 'Insti Programin';
+        $nuevo->certificado = 'http://aaaaaaaaa.com';
+        $nuevo->fecha_inicio = '2024-01-03';
+        $nuevo->fecha_finalizacion = '2024-02-03';
+        $nuevo->descripcion = 'Hago de cuenta que programo';
+
+        $nuevo->save();        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Estudio $id)
     {
-        //
+        return view('estudio.show',['estudio'=>$id]);
     }
 
     /**

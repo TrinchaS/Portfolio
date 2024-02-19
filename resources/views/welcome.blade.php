@@ -1,24 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
-  <header class="sticky top-0 overflow-hidden">
-    @include('components.nav')
-  </header>
-  
-  <main>
-
-  </main>
-  
-  <footer>
-
-  </footer>
-  <h1 class="text-3xl font-bold underline">
-    Principal
-  </h1>
-</body>
-</html>
+@extends('components.base')
+@section('titulo','Principal')
+@section('main')
+    <h1 class="text-3xl font-bold underline">
+        Home estudio
+    </h1>
+    <br><br>
+    <a href="{{action([\App\Http\Controllers\EstudioController::class,'index'])}}">ir a estudios</a>
+@endsection
