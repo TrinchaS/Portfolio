@@ -1,4 +1,4 @@
-@extends('components.base')
+@extends('components.public.index')
 @section('titulo', 'Estudios')
 @section('main')
 
@@ -16,7 +16,15 @@
     Descripcion: {{ $estudio->descripcion }}
     <br>
     <br>
-    <a href="{{action([\App\Http\Controllers\EstudioController::class,'index'])}}">volver</a>
+    <div class="flex ms-2">
+        <div class=" me-2 border-double border-4 border-sky-500">
+            <a href="{{action([\App\Http\Controllers\EstudioController::class,'edit'],$estudio)}}">editar</a>
+        </div>
+        <div class="border-double border-4 border-sky-500">
+            <a href="{{action([\App\Http\Controllers\EstudioController::class,'index'])}}">volver</a>
+        </div>
+    </div>
+  
     <br>
     
 

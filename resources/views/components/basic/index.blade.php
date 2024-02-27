@@ -11,7 +11,7 @@
 
 <body>
     <header class="sticky top-0 overflow-hidden">
-        @include('components.nav')
+        @yield('nav')
     </header>
 
     <main>
@@ -19,7 +19,7 @@
     </main>
 
     <footer>
-        @include('components.footer')
+        @yield('footer')
     </footer>
 
 </body>

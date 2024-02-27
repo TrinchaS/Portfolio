@@ -1,18 +1,17 @@
-@extends('components.base')
+@extends('components.public.index')
 @section('titulo', 'Estudios')
 @section('main')
 
     <h1 class="text-3xl font-bold underline">
         Home estudio
     </h1>
-
-    <a href="{{url("/")}}">Home</a>
-
+    <br>
+    <a href="{{action([\App\Http\Controllers\HomeController::class,'index'])}}">ir al Home</a>
+    <br>
+    <a href="{{action([\App\Http\Controllers\EstudioController::class,'create'])}}">crear estudio</a>
+    <br><br>
     @foreach ($estudios as $e)
-        <br><br>
-        <a href="{{action([\App\Http\Controllers\EstudioController::class,'show'],$e)}}">edita</a>
         <br>
-        borrar
         <br>
         Titulo: {{ $e->titulo }}
         <br>
@@ -26,6 +25,9 @@
         <br>
         Descripcion: {{ $e->descripcion }}
         <br>
+        <div class="border-double border-4 border-sky-500" >
+            <a href="{{action([\App\Http\Controllers\EstudioController::class,'show'],$e->id)}}">inspeccionar</a>
+        </div>
     @endforeach
     
 @endsection

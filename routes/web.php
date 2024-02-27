@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EstudioController;
 use App\Http\Controllers\HomeController;
@@ -18,9 +19,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index']);
 
+Route::resource('estudios', EstudioController::class);
 
-Route::prefix('estudios')->group(function(){
-    Route::get('/',[EstudioController::class,'index']);
-    Route::get('/buscar/{id}',[EstudioController::class,'show']);
-    Route::get('/crear',[EstudioController::class,'store']);
+Route::prefix('admin')->group(function(){
+    Route::middleware('logueado:0')->group(function(){ //el argumento al middleware ya no haria falta
+        Route::get('/login',[AdminController::class,'login']); //este ya no haria falta
+        Route::put('/login',[AdminController::class,'loguear']);
+    });
+    Route::middleware('logueado:1')->group(function(){
+        Route::get('/',[AdminController::class,'index']);
+        Route::get('/logout',[AdminController::class,'logout']);
+        Route::get('/creandoUsuario',[AdminController::class,'creandoUsuario']);
+        Route::put('/creandoUsuario',[AdminController::class,'creaUsuario']);
+    });
 });
