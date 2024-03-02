@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Habilidad extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nombre','porcentaje','certificado','descripcion'];
 }

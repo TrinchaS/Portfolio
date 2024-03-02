@@ -14,8 +14,8 @@ class EstudioController extends Controller
      */
     public function index()
     {
-        $estudiosModel = Estudio::all();
-        return view('estudio.index',['estudios'=>$estudiosModel]);
+        $estudios = Estudio::all();
+        return view('estudio.index',['estudios'=>$estudios]);
     }
 
     /**
@@ -72,6 +72,5 @@ class EstudioController extends Controller
     {
         $estudio->delete();
         return Redirect::action([EstudioController::class,'index'])->with(['msj'=>'Estudio eliminado']);
-
     }
 }

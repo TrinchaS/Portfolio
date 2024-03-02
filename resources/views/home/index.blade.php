@@ -9,7 +9,7 @@
             <br>
             <a href="http://">experiencia</a>
             <br>
-            <a href="http://">habilidades</a>
+            <a href="{{ action([\App\Http\Controllers\HabilidadController::class, 'index']) }}">habilidades</a>
             <br>
             <a href="http://">proyectos</a>
         </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EstudioController;
+use App\Http\Controllers\HabilidadController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index']);
 
 Route::resource('estudios', EstudioController::class);
+Route::resource('habilidades', HabilidadController::class);
 
 Route::prefix('admin')->group(function(){
     Route::middleware('logueado:0')->group(function(){ //el argumento al middleware ya no haria falta

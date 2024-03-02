@@ -28,7 +28,7 @@
                 <button type="submit">editar</button>        
             </div>
             <div class="border-double border-4 border-sky-500">
-                <a href="{{action([\App\Http\Controllers\EstudioController::class,'index'],$estudio)}}">volver</a>
+                <a href="{{action([\App\Http\Controllers\EstudioController::class,'index'])}}">volver</a>
             </div>
         </div>
     </form>
