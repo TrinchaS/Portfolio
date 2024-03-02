@@ -6,6 +6,10 @@
         @csrf
         @method('put')
         <br>
+        <div>@foreach ($errors->all() as $m) 
+
+            <div>{{$m}}</div>
+        @endforeach</div>
         <input type="text" placeholder="nombre" name="name">
         <br>
         <input type="email" placeholder="email" name="email">

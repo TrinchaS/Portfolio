@@ -17,6 +17,7 @@
                 @method('put')
                 <input type="email" placeholder="e-mail" name="email"
                     class="rounded-t-xl text-xl px-4 bg-gray-200 hover:bg-gray-300 border-gray-500 border-2 text-cyan-800 focus:outline-none focus:border-gray-600 focus:ring-gray-600 placeholder-cyan-900">
+                
                 <input type="password" placeholder="contraseña" name="password"
                     class="rounded-b-xl text-xl px-4 bg-gray-200 hover:bg-gray-300 border-gray-500 border-2 text-cyan-800 focus:outline-none focus:border-gray-600 focus:ring-gray-600 placeholder-cyan-900">
                 <button type="submit" class="text-xl bg-cyan-600 rounded-full mt-10 hover:scale-105">

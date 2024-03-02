@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
-    public function loguear(Request $request){
+    public function loguear(LoginRequest $request){
         if(Auth::attempt([
             'email' => $request->input('email'),
             'password' => $request->input('password')
@@ -28,7 +29,8 @@ class AdminController extends Controller
         ){
             return Redirect::action([AdminController::class,'index']);
         }
-        return Redirect::action([HomeController::class,'index']);
+        //en este si dejo el login tengo que re dirijirlo a AdminController::class login
+        return Redirect::action([AdminController::class,'login'])->withErrors(['login'=>'usuario o cantraseña invalida']);
     }
 
     public function logout(){

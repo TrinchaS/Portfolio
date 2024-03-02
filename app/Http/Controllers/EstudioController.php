@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\estudio\EstudioRequest;
 use App\Models\Estudio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -28,20 +29,13 @@ class EstudioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EstudioRequest $request)
     {
         $nuevo = new Estudio();
-        
-        $nuevo->titulo = $request->input('titulo');
-        $nuevo->instituto = $request->input('instituto');
-        $nuevo->certificado = $request->input('certificado');
-        $nuevo->fecha_inicio = $request->input('fecha_inicio');
-        $nuevo->fecha_finalizacion = $request->input('fecha_finalizacion');
-        $nuevo->descripcion = $request->input('descripcion');
-
+        $nuevo->fill($request->validated());
         $nuevo->save();
         
-        return Redirect::action([\App\Http\Controllers\EstudioController::class,'index']);
+        return Redirect::action([\App\Http\Controllers\EstudioController::class,'index'])->with(['msj'=>'Se creo el estudio']);
     }
 
     /**
@@ -63,25 +57,21 @@ class EstudioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Estudio $estudio)
+    public function update(EstudioRequest $request, Estudio $estudio)
     {
-        $estudio->titulo = $request->input('titulo');
-        $estudio->instituto = $request->input('instituto');
-        $estudio->certificado = $request->input('certificado');
-        $estudio->fecha_inicio = $request->input('fecha_inicio');
-        $estudio->fecha_finalizacion = $request->input('fecha_finalizacion');
-        $estudio->descripcion = $request->input('descripcion');
-
+        $estudio->fill($request->validated());
         $estudio->save();
 
-        return Redirect::action([EstudioController::class,'index']);
+        return Redirect::action([EstudioController::class,'index'])->with(['msj'=>'Se actualizo el estudio']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Estudio $estudio)
     {
-        //
+        $estudio->delete();
+        return Redirect::action([EstudioController::class,'index'])->with(['msj'=>'Estudio eliminado']);
+
     }
 }

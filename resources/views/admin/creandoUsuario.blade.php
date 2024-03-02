@@ -14,6 +14,7 @@
         <br>
         password <br>
         <input type="password" placeholder="contraseña" name="password">
+        <br><br>
         <button type="submit">enviar</button>
     </form>
 @endsection
