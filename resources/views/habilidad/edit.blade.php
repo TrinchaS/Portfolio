@@ -6,7 +6,7 @@
 
     <form  method="post" action="{{action([\App\Http\Controllers\HabilidadController::class,'update'],$habilidad)}}">
         @csrf
-        @method('put')
+        @method('put') 
 
         @if (Session::has('errors'))
             <div class="bg-red-400">
@@ -21,6 +21,7 @@
         <label>Certificado</label> <input type="text" name="certificado" value="{{$habilidad->certificado}}"> <br>
         <label>Descripcion</label> <input type="text" name="descripcion" value="{{$habilidad->descripcion}}"> <br>
         <br>
+        
         <div class="flex ms-2">
             <div class=" me-2 border-double border-4 border-sky-500">
                 <button type="submit">editar</button>        

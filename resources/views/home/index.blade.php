@@ -7,17 +7,17 @@
             <div class="bg-sky-500 ps-2">Menu</div>
             <a href="{{ action([\App\Http\Controllers\EstudioController::class, 'index']) }}">estudios</a>
             <br>
-            <a href="http://">experiencia</a>
+            <a href="{{ action([\App\Http\Controllers\ExperienciaController::class, 'index']) }}">experiencias</a>
             <br>
             <a href="{{ action([\App\Http\Controllers\HabilidadController::class, 'index']) }}">habilidades</a>
             <br>
-            <a href="http://">proyectos</a>
+            <a href="{{ action([\App\Http\Controllers\ProyectoController::class, 'index']) }}">proyectos</a>
         </div>
 
         <div>
             todo el contenido al abrir y cada contenido cuando se selecciona en el menu.
             <br><br>
-            
         </div>
+    </div>
 
-    @endsection
+@endsection

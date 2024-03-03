@@ -20,7 +20,7 @@
         <br>
         <div class="border-2 border-gray-400 flex px-1 py-2">
             <div class="border-2 border-sky-500 p-1 ms-1" >
-                <a href="{{action([\App\Http\Controllers\HabilidadController::class,'show'],$habilidad->id)}}">inspeccionar</a>
+                <a href="{{action([\App\Http\Controllers\HabilidadController::class,'show'],$habilidad)}}">inspeccionar</a>
             </div>
             <div class="border-2 border-sky-500 p-1 mx-1">
                 <a href="{{ action([\App\Http\Controllers\HabilidadController::class, 'edit'], $habilidad) }}">editar</a>

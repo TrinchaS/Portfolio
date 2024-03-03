@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\habilidad;
+namespace App\Http\Requests\experiencia;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class HabilidadRequest extends FormRequest
+class ExperienciaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,10 @@ class HabilidadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required | string | max:100',
-            'porcentaje' => 'required | integer | min:0 | max:100',
-            'certificado' => 'url',
+            'puesto' => 'required | string | max:100',
+            'empresa' => 'required | string | max:150',
+            'fecha_ingreso' => 'required | date',
+            'fecha_egreso' => 'required | date',
             'descripcion' => 'required | string'
         ];
     }

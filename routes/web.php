@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EstudioController;
+use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\HabilidadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProyectoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,8 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::resource('estudios', EstudioController::class);
 Route::resource('habilidades', HabilidadController::class);
+Route::resource('experiencias', ExperienciaController::class);
+Route::resource('proyectos', ProyectoController::class);
 
 Route::prefix('admin')->group(function(){
     Route::middleware('logueado:0')->group(function(){ //el argumento al middleware ya no haria falta
