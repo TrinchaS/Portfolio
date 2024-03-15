@@ -28,11 +28,7 @@ class PersonaRequest extends FormRequest
             'nacionalidad' => 'required | string | max:100',
             'fecha_nacimiento' => 'required | date',
             'estado_civil' => 'required | Rule::in(["soltero","concubinato","casado","divorciado","viudo"])', //agregar default('soltero')
-            'sexo' => 'required | Rule::in(["masculino","femenino","sin aclarar"]',
-            'estudio_id' => 'required | integer | exist:estudios,id',
-            'habilidad_id' => 'required | integer | exist:habilidades,id',
-            'experiencia_id' => 'required | integer | exist:experiencias,id',
-            'proyecto_id' => 'required | integer | exist:proyectos,id'
+            'sexo' => 'required | Rule::in(["masculino","femenino","sin aclarar"]'
         ];
     }
 }

@@ -16,12 +16,13 @@ class PersonaController extends Controller
      */
     public function index()
     {
+        $persona = Persona::all();
         $estudios = Estudio::all();
         $experiencias = Experiencia::all();
         $habilidades = Habilidad::all();
         $proyectos = Proyecto::all();
 
-        return view('persona.index',['estudios'=>$estudios,'experiencias'=>$experiencias,
+        return view('persona.index',['persona'=>$persona,'estudios'=>$estudios,'experiencias'=>$experiencias,
             'habilidades'=>$habilidades,'proyectos'=>$proyectos]);
     }
 
