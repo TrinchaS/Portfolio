@@ -6,6 +6,7 @@ use App\Http\Controllers\EstudioController;
 use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\HabilidadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProyectoController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,10 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::resource('estudios', EstudioController::class);
-Route::resource('habilidades', HabilidadController::class);
-Route::resource('experiencias', ExperienciaController::class);
-Route::resource('proyectos', ProyectoController::class);
 
 Route::prefix('admin')->group(function(){
     Route::middleware('logueado:0')->group(function(){ //el argumento al middleware ya no haria falta
@@ -34,6 +31,11 @@ Route::prefix('admin')->group(function(){
     });
     Route::middleware('logueado:1')->group(function(){
         Route::get('/',[AdminController::class,'index']);
+        Route::resource('estudios', EstudioController::class);
+        Route::resource('habilidades', HabilidadController::class);
+        Route::resource('experiencias', ExperienciaController::class);
+        Route::resource('proyectos', ProyectoController::class);
+
         Route::get('/logout',[AdminController::class,'logout']);
         Route::get('/creandoUsuario',[AdminController::class,'creandoUsuario']);
         Route::put('/creandoUsuario',[AdminController::class,'creaUsuario']);

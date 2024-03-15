@@ -1,4 +1,4 @@
-@extends('components.public.index')
+@extends('components.admin.index')
 @section('titulo', 'Estudios')
 @section('main')
 

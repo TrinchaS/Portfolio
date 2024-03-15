@@ -1,22 +1,21 @@
 @extends('components.public.index')
-@section('titulo', 'Principal')
+@section('titulo', 'Curriculum')
 @section('main')
 
-    <div class="flex">
-        <div class="border-2 rounded-lg m-2 p-4">
-            <div class="bg-sky-500 ps-2">Menu</div>
-            <a href="{{ action([\App\Http\Controllers\EstudioController::class, 'index']) }}">estudios</a>
-            <br>
-            <a href="{{ action([\App\Http\Controllers\ExperienciaController::class, 'index']) }}">experiencias</a>
-            <br>
-            <a href="{{ action([\App\Http\Controllers\HabilidadController::class, 'index']) }}">habilidades</a>
-            <br>
-            <a href="{{ action([\App\Http\Controllers\ProyectoController::class, 'index']) }}">proyectos</a>
-        </div>
-
+    @if (Auth::check())
+        <a class="bg-red-400 m-2 p-1" href="{{ action([\App\Http\Controllers\AdminController::class, 'index']) }}">ir a la vista ADMIN</a>
+    @endif
+    
+    <div class=" text-center">
+        <!-- animacion entre un componente y otro al ir roleando -->
         <div>
-            todo el contenido al abrir y cada contenido cuando se selecciona en el menu.
-            <br><br>
+            @include('components.public.experiencia')
+            <br>
+            @include('components.public.estudio')
+            <br>
+            @include('components.public.habilidad')
+            <br>
+            @include('components.public.proyecto')
         </div>
     </div>
 

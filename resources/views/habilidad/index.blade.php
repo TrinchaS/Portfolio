@@ -5,6 +5,7 @@
     <h1 class="text-3xl font-bold underline">
         HABILIDADES
     </h1>
+    <div id="viendo"></div>
     <br>
     @include('components.basic.msj')
     <a href="{{action([\App\Http\Controllers\HomeController::class,'index'])}}">ir al Home</a>

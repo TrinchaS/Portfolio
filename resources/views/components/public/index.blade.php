@@ -1,7 +1,7 @@
 @extends('components.basic.index')
 
 @section('nav')
-    @include('components.public.nav')
+    @include('components.basic.nav')
 @endsection
 
 <!-- Sin definir aun "main" -->

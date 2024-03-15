@@ -1,10 +1,10 @@
 @extends('components.basic.index')
 
 @section('nav')
-    @include('components.admin.nav')
+    @include('components.basic.nav')
 @endsection
 
-<!-- Sin definir aun "main" -->
+<!-- Sin definir "main" -->
 
 @section('footer')
     @include('components.public.footer')
